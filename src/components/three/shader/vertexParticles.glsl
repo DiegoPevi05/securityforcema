@@ -12,7 +12,7 @@ float PI = 3.144159;
 void main() {
   vUv = uv;
   vec3 pos = position;
-  pos.x = mod(0.4*aVelocity*time, aDistance)+0.25;
+  pos.x = mod(0.4*aVelocity*time, aDistance);
   traveled = pos.x;
   pos.x*=.2;
   vec4 mvPosition = modelViewMatrix * vec4(pos, 1.);

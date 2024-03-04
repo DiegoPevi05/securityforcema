@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const AboutUs = () => {
 
 	return(
-		<div id="AboutUs" className="w-full h-auto sm:h-[800px] py-14 sm:py-16 px-10 sm:px-48 flex flex-col sm:flex-row">
+		<div id="about" className="w-full h-auto sm:h-[800px] py-14 sm:py-16 px-10 sm:px-48 flex flex-col sm:flex-row">
 			<div className="w-full sm:w-1/2 h-1/2 sm:h-full flex flex-col py-16 justify-center items-start gap-y-6 sm:gap-y-16">
 				<span className="text-third">Sobre Nosotros</span>
 				<h1 className="text-primary text-md sm:text-4xl leading-[30px] sm:leading-[60px] text-left sm:pr-12">Nuestros colaboradores en Eurolabs trabajan todos los dias para responder con exitos las necesidades de nuestros clientes compremeitdos con altos estandares de calidad</h1>

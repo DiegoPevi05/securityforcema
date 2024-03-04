@@ -2,22 +2,15 @@
 import { NavbarData } from "@/lib/constants"
 import {useEffect, useState} from "react"
 import {motion , AnimatePresence} from "framer-motion"
-import {  animateScroll as scroll } from 'react-scroll';
+import {  animateScroll as scroll, Link } from 'react-scroll';
 import { AlignJustify, X } from "lucide-react";
 
 
 const Navbar = () => {
-	const [openOption ,setOpenOption] = useState<number|null>(null);
+	const [openOption] = useState<number|null>(null);
 	const [openSideBar, setOpenSideBar] = useState<boolean>(false);
 	const [scrollNav, setScrollNav] = useState<boolean>(false)
 
-	const triggerOption = (index:number) => {
-		if(index == openOption){
-			setOpenOption(null);
-		}else{
-			setOpenOption(index);
-		}
-	}
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
@@ -50,7 +43,9 @@ const Navbar = () => {
 					{NavbarData.map((item,index)=>{
 						return(
 							<div key={"container_navbar_option"+index} className="relative h-full w-auto flex justify-center items-center">
-								<li  onClick={()=>triggerOption(index)} className={`${scrollNav ?"hover:text-third":"hover:text-primary"}  cursor-pointer`} key={"NavItem_"+index}>{item.title}</li>
+								<Link to={item.href}>
+									<li className={`${scrollNav ?"hover:text-third":"hover:text-primary"}  cursor-pointer`} key={"NavItem_"+index}>{item.title}</li>
+								</Link>
 								{openOption == index &&
 									<motion.span 
 										key={"NavItemSpan"+index}
@@ -64,7 +59,7 @@ const Navbar = () => {
 					})}
 				</ul>
 			</div>
-			<div className={`flex lg:hidden fixed top-0 w-screen h-auto flex-row items-center justify-between p-6 sm:pt-8 z-30`}>
+			<div className={`flex lg:hidden fixed top-0 w-screen h-auto flex-row items-center justify-between p-6 sm:pt-8 z-[1000]`}>
 				<span onClick={()=>scrollToTop()} className="cursor-pointer">
 					<img  className="h-6 sm:h-10 w-auto" src="./images/logos/logo192.png"/>
 				</span>
@@ -91,7 +86,10 @@ const Navbar = () => {
 								{NavbarData.map((item,index)=>{
 									return(
 										<div key={"container_navbar_section"+index} className="h-full w-full flex flex-col justify-start items-start">
-											<li  onClick={()=>triggerOption(index)} className="text-slate-700 font-bold cursor-pointer" key={"NavItemr"+index}>{item.title}</li>
+
+											<Link to={item.href}>
+												<li  onClick={()=>setOpenSideBar(false)} className="text-slate-700 font-bold cursor-pointer" key={"NavItemr"+index}>{item.title}</li>
+											</Link>
 										</div>
 									)
 								})}

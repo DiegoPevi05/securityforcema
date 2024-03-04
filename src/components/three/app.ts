@@ -1,3 +1,4 @@
+//@ts-nocheck
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -28,6 +29,10 @@ function generateString(length: number) {
         result += " ";
     }
     return result;
+}
+function getXPosition(element) {
+    let rect = element.getBoundingClientRect();
+    return rect.right;
 }
 
 export class ScrollerEncoded {
@@ -61,6 +66,8 @@ export class ScrollerEncoded {
         this.scene2 = new THREE.Scene();
         this.scroller = Array.from(document.querySelectorAll<HTMLElement>(".slider__scroller"));
         this.encodedSlides = Array.from(document.querySelectorAll<HTMLElement>(".encoded .slide"));
+
+
         this.position = -4 * (360 + 200);
 
         this.container = options.dom;
@@ -99,6 +106,8 @@ export class ScrollerEncoded {
 
         this.camera.position.set(0, 0, 2);
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controls.enablePan = false;
+        this.controls.enableZoom = false;
         this.time = 0;
 
         this.isPlaying = true;
@@ -249,13 +258,18 @@ export class ScrollerEncoded {
     }
 
     checkIfActive() {
+        // Calculate x positions of encoded slides and check if any slide is centered
         let half = window.innerWidth / 2;
         let slideWidth = 360;
-        let slideGap = 200;
-        let whole = slideWidth + slideGap;
-        this.tempPos = this.position % whole; // Ensure position stays within one slide width plus gap
-        this.curPos = (this.tempPos + whole) % whole; // Ensure curPos stays within one slide width plus gap
-        let center = this.curPos > (half - slideWidth );
+        let center = false;
+
+        this.encodedSlides.forEach(slide => {
+            let xPos = getXPosition(slide);
+            if (xPos > half && (xPos - slideWidth) < half) {
+                center = true;
+            }
+        });
+
         return center;
     }
 

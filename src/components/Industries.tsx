@@ -1,23 +1,60 @@
 'use client'
+import {Shield, CheckCircle, Star, LifeBuoy, Award, Lightbulb, Heart, ShieldCheck}  from "lucide-react";
+
+const Reasons:any[] = [
+	{
+		label: "Seguridad",
+		icon: <Shield className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Confianza",
+		icon: <CheckCircle className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Calidad",
+		icon: <Star className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Soporte",
+		icon: <LifeBuoy className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Experiencia",
+		icon: <Award className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Innovación",
+		icon: <Lightbulb className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Compromiso",
+		icon: <Heart className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+	{
+		label: "Responsabilidad",
+		icon: <ShieldCheck className="h-12 w-12 hover:text-third cursor-pointer transition-all duration-300 hover:scale-[1.2]"/>,
+	},
+]
 
 
-const AboutUs = () => {
+const IndustriesComponent = () => {
 
 	return(
-		<div id="AboutUs" className="w-full h-auto sm:h-[800px] py-14 sm:py-16 px-10 sm:px-48 flex flex-col sm:flex-row">
-			<div className="w-full sm:w-1/2 h-1/2 sm:h-full flex flex-col py-16 justify-center items-start gap-y-6 sm:gap-y-16">
-				<span className="text-third">Sobre Nosotros</span>
-				<h1 className="text-primary text-md sm:text-4xl leading-[30px] sm:leading-[60px] text-left sm:pr-12">Nuestros colaboradores en Eurolabs trabajan todos los dias para responder con exitos las necesidades de nuestros clientes compremeitdos con altos estandares de calidad</h1>
-				<div className="w-full h-auto flex flex-row justify-between items-end">
-					<span className="text-third flex flex-row gap-x-6 hover:gap-x-8 w-2/3 sm:w-1/3 hover:underline cursor-pointer">Saber mas </span>
-					<span className="bg-third h-[0.5px] w-1/3 sm:w-2/3"></span>
-				</div>
-			</div>
-			<div className="w-full sm:w-1/2 h-1/3 sm:h-full flex flex-col sm:p-16 ">
-				<img src="/images/home/private_security_1.jpg" className="w-full h-full object-cover object-top brightness-80 "/>
+    <div id="contact" className="flex flex-col w-full max-w-7xl mx-auto pt-12 sm:py-6 px-4 gap-y-12 sm:gap-y-0 h-screen sm:px-16 px-6 items-center justify-center">
+      <h2 className={`font-heading text-third sm:text-[18px] text-[14px] uppercase tracking-wider`}>{"Expertos en diferentes campos"}</h2>
+      <h1 className={`font-heading text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]`}>{"Industrias"}</h1>
+			<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full h-1/2 mt-6">
+				{Reasons.map((item, index) => (
+					<div key={`reason_${index}`} className="flex flex-col items-center gap-2">
+						<div className="w-auto h-auto bg-primary rounded-full flex justify-center items-center">
+							<span className="w-16 sm:w-24 h-16 sm:h-24 text-secondary flex items-center justify-center">{item.icon}</span>
+						</div>
+						<p className="text-white text-center text-md font-heading">{item.label}</p>
+					</div>
+				))}
 			</div>
 		</div>
 	)
 }
 
-export default AboutUs;
+export default IndustriesComponent;

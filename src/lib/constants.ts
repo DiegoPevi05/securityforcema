@@ -2,28 +2,28 @@ import {NavbarDataProps, Service} from "./interfaces";
 
 export const NavbarData:NavbarDataProps[] = [
   {
-    title:"Sobre Security Force",
-    href: "/about",
+    title:"Noticias",
+    href: "news",
+  },
+  {
+    title:"Nosotros",
+    href: "about",
   },
   {
     title:"Servicios",
-    href: "/services",
-  },
-  {
-    title:"News",
-    href: "/news",
+    href: "services",
   },
   {
     title:"Industrias",
-    href: "/industries",
+    href: "industries",
   },
   {
     title:"FAQ",
-    href: "/faq",
+    href: "faq",
   },
   {
     title:"Contacto",
-    href: "/contact",
+    href: "contact",
   }
 ] 
 
@@ -33,20 +33,20 @@ export const Services: Service[] = [
     title: "Seguridad Empresarial",
     subtitle: "Protección Integral",
     description: "Ofrecemos soluciones de seguridad a medida para proteger su empresa, sus empleados y sus activos. Desde la vigilancia 24/7 hasta la gestión de accesos, estamos aquí para garantizar la tranquilidad de su negocio.",
-    image_url: "placeholder_image_url"
+    image_url: "/images/services/security_1.svg"
   },
   {
     header: "Servicio de Seguridad para Negocios",
     title: "Seguridad para Negocios",
     subtitle: "Protección Profesional",
     description: "Nuestros expertos en seguridad proporcionan servicios personalizados para salvaguardar su negocio contra cualquier amenaza. Desde la evaluación de riesgos hasta la respuesta a emergencias, estamos comprometidos a mantener su negocio seguro.",
-    image_url: "placeholder_image_url"
+    image_url: "/images/services/security_2.svg"
   },
   {
     header: "Servicio de Guardaespaldas",
     title: "Guardaespaldas",
     subtitle: "Protección Personalizada",
     description: "Nuestros guardaespaldas altamente capacitados están dedicados a garantizar su seguridad personal en todo momento. Ya sea para viajes de negocios, eventos importantes o protección diaria, puede confiar en nosotros para su protección.",
-    image_url: "placeholder_image_url"
+    image_url: "/images/services/security_3.svg"
   }
 ];

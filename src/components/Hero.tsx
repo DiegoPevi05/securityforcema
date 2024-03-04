@@ -34,17 +34,17 @@ const Hero = () => {
 					initial={{ translateY:20, opacity:0 }}
 					animate={{ translateY:0, opacity:1  }}
         	transition={{ delay: 1, duration: 0.3, ease: "easeIn" }}
-					className="text-white">20 años de innovacion</motion.h3>
+					className="text-white">Protegiendote y manteniendo tu integridad</motion.h3>
 				<motion.h1 
 					initial={{ translateY:20, opacity:0 }}
 					animate={{ translateY:0, opacity:1  }}
         	transition={{ delay: 1.6, duration: 0.3, ease: "easeIn" }}
-					className="font-bold text-md sm:text-2xl text-white">Comprometidos con innovacion medica</motion.h1>
+					className="font-bold text-md sm:text-2xl text-white">Comprometidos con tu seguridad</motion.h1>
 				<motion.h3 
 					initial={{ translateY:20, opacity:0 }}
 					animate={{ translateY:0, opacity:1  }}
         	transition={{ delay: 2.6, duration: 0.3, ease: "easeIn" }}
-					className="flex flex-row gap-x-3 hover:gap-x-4 text-lime-300 hover:text-lime-500 transition-all duration-300 cursor-pointer ">Grupo Eurolabs <ArrowDownIcon/></motion.h3>
+					className="font-heading flex flex-row gap-x-3 hover:gap-x-4 text-lime-300 hover:text-lime-500 transition-all duration-300 cursor-pointer ">Security Force M&A <ArrowDownIcon/></motion.h3>
 			</div>
 			<div className="slider__container">
 				<div ref={container1} id="container1"></div>

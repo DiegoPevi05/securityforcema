@@ -16,26 +16,26 @@ interface PropsBusinessCard {
 
 const dataPropsBusiness:PropsBusinessCard[] = [
 	{
-		title:"Nos preocupa el desarrollo de productos",
+		title:"Nos preocupa el desarrollo de nuestras operaciones",
 		header:"Negocio",
-		business:"CDMO",
-		labelLink:"Explora",
+		business:"Seguridad Personal",
+		labelLink:"Seguridad",
 		link:"#",
 		img:"./images/home/private_security_2.jpg"
 	},
 	{
-		title:"Los estandares de calidad mas altos para tu negocio",
+		title:"Los estandares de calidad mas altos para la seleccion de personal",
 		header:"Negocio",
-		business:"CDMO",
-		labelLink:"Explora",
+		business:"Seguridad Empresarial",
+		labelLink:"Seguridad de Empresas",
 		link:"#",
 		img:"./images/home/private_security_3.jpg"
 	},
 	{
-		title:"Tu empresa va a poder desarrolarse en el corto plazo",
+		title:"Tu empresa como parte de un gran negocio",
 		header:"Negocio",
-		business:"CDMO",
-		labelLink:"Explora",
+		business:"Seguridad en tu hogar",
+		labelLink:"Seguridad",
 		link:"#",
 		img:"./images/home/private_security_4.jpeg"
 	}
@@ -80,9 +80,9 @@ const News = () => {
 	}
 
 	return(
-		<div id="Business" className="w-full py-16 flex flex-col justify-center items-center h-screen">
-			<h1 className="text-md sm:text-xl font-bold mb-4 font-heading text-primary">AREAS DE NEGOCIO</h1>
-			<p className="text-sm sm:text-lg mb-6 text-center">En eurolabs ofrecemos un alcance integrado, incluyendo desarrollo, manufactura y comercializacion de medicinas. </p>
+		<div id="news" className="w-full py-16 flex flex-col justify-center items-center h-screen">
+			<h1 className="text-xl sm:text-xl font-bold mb-4 font-heading text-primary">Noticias</h1>
+			<p className="text-sm sm:text-lg mb-6 text-center px-6">En eurolabs ofrecemos un alcance integrado, incluyendo desarrollo, manufactura y comercializacion de medicinas. </p>
 			<div className="w-full h-full overflow-hidden">
 				<div id="container_business" 
 					className={clsx("min-h-screen sm:w-screen h-auto flex flex-row transition-all duration-1200 ease-in-out",

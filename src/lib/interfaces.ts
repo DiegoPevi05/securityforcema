@@ -1,6 +1,6 @@
 export interface NavbarDataProps {
   title:string;
-  href: String;
+  href: string;
 }
 
 export interface Service {

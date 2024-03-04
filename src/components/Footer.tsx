@@ -1,7 +1,6 @@
 'use client'
 import { FC } from "react";
-import {  animateScroll as scroll } from "react-scroll";
-import { styles } from "../lib/styles";
+import {  animateScroll as scroll, Link } from "react-scroll";
 import {NavbarData} from "../lib/constants";
 import {Facebook, Instagram, Linkedin} from "lucide-react";
 
@@ -30,7 +29,9 @@ const FooterSection: FC = () => {
         {NavbarData.map((item,index_item)=>{
           return(
             <div key={"Section"+index_item}>
-              <h4 className={`${styles.footerLinkHeader}`}>{item.title}</h4>
+              <Link to={item.href}>
+                <h4 className={`font-body font-medium sm:text-[14px] uppercase cursor-pointer hover:text-third`}>{item.title}</h4>
+              </Link>
             </div>
         )})}
       </div>

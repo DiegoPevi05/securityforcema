@@ -4,6 +4,9 @@
   </a>
 </p>
 
+#### Security Force M&A
+
+Go to the [Security Force M&A](https://securityforcema.vercel.app/) website.
 
 # Main Page - Landing Page  Security Force M&A
 This is the main page of the Security Force website. This landing page is designed to show the content and products of the company. Here are the key features and details of this application:
@@ -33,6 +36,7 @@ npm run build
 npm run dev
 ```
 5. The application will start on port 3000
+6. As is a nextJs application, you can build the application it will run automatically when you link the repository to your vercel account or you can run the commands above to deploy the application in your favorite server.
 
 ### Dependencies
 1. lucide-react [Download](https://www.npmjs.com/package/lucide-react)
